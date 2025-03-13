@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Review Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contract Review Prototype</h1>
+            <p>Upload or paste your contract to get an automated review</p>
+        </header>
+        
+        <div class="input-section">
+            <div class="tabs">
+                <button id="paste-tab" class="tab active">Paste Text</button>
+                <button id="upload-tab" class="tab">Upload File</button>
+            </div>
+            
+            <div id="paste-content" class="tab-content active">
+                <textarea id="contract-text" placeholder="Paste your contract text here..."></textarea>
+            </div>
+            
+            <div id="upload-content" class="tab-content">
+                <input type="file" id="contract-file" accept=".txt,.docx,.pdf">
+                <p class="note">Note: This is a prototype. File upload will just extract text content.</p>
+            </div>
+            
+            <button id="analyze-btn">Analyze Contract</button>
+        </div>
+        
+        <div class="results-section hidden" id="results">
+            <h2>Contract Analysis</h2>
+            <div class="summary">
+                <p>Found <span id="issue-count">0</span> potential areas of concern</p>
+            </div>
+            
+            <div class="contract-display">
+                <div id="highlighted-contract"></div>
+            </div>
+            
+            <div class="comments-panel">
+                <h3>Comments</h3>
+                <div id="comments-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
